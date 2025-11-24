@@ -1,4 +1,4 @@
-package com.danignat.ark.data
+package com.danignat.ark.repository
 
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

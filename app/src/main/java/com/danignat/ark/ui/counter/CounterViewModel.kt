@@ -2,7 +2,7 @@ package com.danignat.ark.ui.counter
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.danignat.ark.data.CounterRepository
+import com.danignat.ark.repository.CounterRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
@@ -25,7 +25,9 @@ class CounterViewModel @Inject constructor(
     }
 
     fun decrement() {
-        counterRepository.decrement()
+        if (counter.value > 0) {
+            counterRepository.decrement()
+        }
     }
 
     fun reset() {
